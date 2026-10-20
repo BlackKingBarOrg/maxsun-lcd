@@ -1,0 +1,15 @@
+[Unit]
+Description=MAXSUN onboard LCD image service (maxsun-lcd)
+# Only USB HID and file watching; no Wayland needed, so it runs with the user
+# manager rather than the graphical session.
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/maxsun-lcd daemon
+Restart=on-failure
+RestartSec=5
+# Covers SIGKILL too, so the bar never shows a stale "connected".
+ExecStopPost=/bin/rm -f %t/maxsun-lcd.json
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,26 @@
+[project]
+name = "maxsun-lcd"
+version = "0.1.0"
+description = "Linux driver for the MAXSUN iCraft Z890 onboard LCD (USB 0416:5021)"
+readme = "README.md"
+authors = [
+    { name = "Zack Yang", email = "zackyang214@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "pillow>=13.0.0",
+    "watchfiles>=1.3.0",
+]
+
+[project.scripts]
+maxsun-lcd = "maxsun_lcd:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+re = [
+    "capstone>=5.0.9",
+    "pefile>=2024.8.26",
+]

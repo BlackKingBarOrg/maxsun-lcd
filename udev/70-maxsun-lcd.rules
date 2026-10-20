@@ -1,0 +1,7 @@
+# MAXSUN iCraft Z890 onboard LCD (USB 0416:5021): let the logged-in user open
+# its hidraw nodes. Numbered below 73 so the uaccess tag is set before
+# systemd's 73-seat-late.rules turns it into an ACL for the seat's user.
+# Install:
+#   sudo cp udev/70-maxsun-lcd.rules /etc/udev/rules.d/
+#   sudo udevadm control --reload && sudo udevadm trigger
+KERNEL=="hidraw*", ATTRS{idVendor}=="0416", ATTRS{idProduct}=="5021", TAG+="uaccess"

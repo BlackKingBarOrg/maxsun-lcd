@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "ai.bkblab.maxsun-lcd",
+  "name": "Maxsun LCD",
+  "version": "0.2.0",
+  "author": "bkblab.ai",
+  "description": "Pick which image the motherboard's onboard LCD shows, or rotate through them",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Onboard LCD",
+    "description": "Full-screen image picker for the MAXSUN onboard screen",
+    "category": "System",
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}
